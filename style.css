@@ -1422,7 +1422,7 @@ button {
 }
 
 .question-pane {
-  padding: 16px 20px;
+  padding: 24px 32px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1437,38 +1437,43 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 10px;
+  padding-bottom: 14px;
   border-bottom: 1px solid var(--exam-pane-border);
-  margin-bottom: 14px;
+  margin-bottom: 22px;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px 12px;
 }
 
 .q-header-left {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
+  gap: 2px;
 }
 
 .q-num {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--exam-qnum);
+  letter-spacing: 0.01em;
 }
 
 .q-type-badge, .q-section-badge {
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 700;
-  padding: 2px 8px;
+  padding: 3px 9px;
   border-radius: 3px;
   background: var(--exam-badge-bg);
   color: var(--exam-badge-text);
-  margin-left: 6px;
+  margin-left: 8px;
+  letter-spacing: 0.03em;
 }
 
 .q-marks {
-  font-size: 12px;
+  font-size: 12.5px;
   color: var(--exam-marks);
+  line-height: 1.5;
+  white-space: nowrap;
 }
 
 .q-marks .pos { color: var(--exam-marks-pos); font-weight: 700; }
@@ -1479,10 +1484,11 @@ button {
 }
 
 .q-stem {
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 16.5px;
+  line-height: 1.7;
   color: var(--exam-stem);
-  margin-bottom: 18px;
+  margin-bottom: 26px;
+  max-width: 78ch;
   white-space: pre-wrap;
 }
 
@@ -1490,15 +1496,16 @@ button {
 .options-area {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 12px;
+  margin-bottom: 24px;
+  max-width: 78ch;
 }
 
 .option-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 10px 14px;
+  gap: 14px;
+  padding: 14px 18px;
   border: 1px solid var(--exam-opt-border);
   border-radius: 4px;
   background: var(--exam-opt-bg);
@@ -1506,6 +1513,8 @@ button {
   touch-action: manipulation; /* kill 300ms tap delay & double-tap zoom on old mobile */
   transition: all var(--transition);
   color: var(--exam-opt-text);
+  font-size: 16px;
+  line-height: 1.55;
 }
 
 .option-item:hover {
@@ -1558,12 +1567,15 @@ button {
 
 .option-key {
   font-weight: 700;
-  font-size: 13px;
+  font-size: 15px;
   color: var(--exam-opt-key);
+  flex-shrink: 0;
+  min-width: 1.35em;
 }
 
 .option-text {
   flex: 1;
+  font-size: 16px;
 }
 
 .staged-badge {
@@ -1601,16 +1613,29 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  padding-top: 14px;
+  gap: 12px;
+  padding-top: 18px;
   border-top: 1px solid var(--exam-pane-border);
   flex-wrap: wrap;
 }
 
 .actions-left, .actions-right {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   flex-wrap: wrap;
+}
+
+/* Consistent, roomier NTA action buttons (spacing/legibility only) */
+.nta-bottom-actions .btn {
+  padding: 10px 18px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+}
+
+.nta-bottom-actions .btn-nta-submit {
+  padding: 10px 24px;
 }
 
 .btn-nta-save {
@@ -1690,18 +1715,18 @@ button {
 .palette-legend-box {
   background: var(--exam-legend-bg);
   border: 1px dashed var(--exam-legend-border);
-  padding: 10px;
+  padding: 14px 12px;
   border-radius: 4px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 }
 
 .legend-row {
   display: flex;
   justify-content: space-between;
-  gap: 8px;
+  gap: 12px;
 }
 
 .legend-row.full {
@@ -1711,8 +1736,9 @@ button {
 .leg-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 11px;
+  gap: 10px;
+  font-size: 12px;
+  line-height: 1.45;
   color: var(--exam-leg-text);
 }
 
@@ -1724,17 +1750,18 @@ button {
 }
 
 .palette-section-title {
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 700;
   color: var(--exam-pal-title);
-  margin: 10px 0 6px;
+  margin: 12px 0 10px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .palette-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
+  gap: 12px 10px;
 }
 
 .palette-btn {
@@ -2068,4 +2095,18 @@ button {
   .palette-pane { display: none; }
   .exam-layout.collapsed .palette-pane { display: block; }
   .theme-toggle { top: 10px; right: 10px; width: 38px; height: 38px; }
+
+  /* Mobile: keep the phone-friendly density but add breathing room */
+  .question-pane { padding: 16px 16px 14px; }
+  .q-header { padding-bottom: 10px; margin-bottom: 16px; }
+  .q-num { font-size: 16px; }
+  .q-stem { font-size: 15.5px; line-height: 1.65; margin-bottom: 18px; }
+  .options-area { gap: 10px; margin-bottom: 18px; }
+  .option-item { padding: 12px 14px; gap: 12px; font-size: 15px; }
+  .option-text { font-size: 15px; }
+  .option-key { font-size: 14px; }
+  .nta-bottom-actions { gap: 10px; padding-top: 14px; }
+  .actions-left, .actions-right { gap: 8px; }
+  .nta-bottom-actions .btn { padding: 9px 12px; font-size: 11.5px; }
+  .nta-bottom-actions .btn-nta-submit { padding: 9px 18px; }
 }
