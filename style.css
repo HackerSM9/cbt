@@ -150,7 +150,8 @@
   --exam-palette-toggle-bg: #3b2b63;
   --exam-palette-toggle-text: #efeaf9;
   --exam-legend-bg: #1d1338;
-  --exam-legend-border: #3b2b63;
+  --exam-legend-border: #a99fd0;
+  --exam-actions-divider: #6d5c9e;
   --exam-leg-text: #cfc4e6;
   --exam-pal-title: #a99fd0;
 
@@ -321,7 +322,8 @@
   --exam-palette-toggle-bg: #1a202c;
   --exam-palette-toggle-text: #ffffff;
   --exam-legend-bg: #ffffff;
-  --exam-legend-border: #cbd5e0;
+  --exam-legend-border: #000000;
+  --exam-actions-divider: #000000;
   --exam-leg-text: #4a5568;
   --exam-pal-title: #718096;
 
@@ -1438,7 +1440,7 @@ button {
   justify-content: space-between;
   align-items: center;
   padding-bottom: 10px;
-  border-bottom: 1px solid var(--exam-pane-border);
+  border-bottom: 1px solid var(--exam-actions-divider);
   margin-bottom: 14px;
   flex-wrap: wrap;
   gap: 6px;
@@ -1603,7 +1605,7 @@ button {
   align-items: center;
   gap: 10px;
   padding-top: 14px;
-  border-top: 1px solid var(--exam-pane-border);
+  border-top: 1px solid var(--exam-actions-divider);
   flex-wrap: wrap;
 }
 
@@ -1611,6 +1613,10 @@ button {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+}
+
+.actions-right {
+  flex-grow: 1;
 }
 
 .btn-nta-save {
@@ -1661,6 +1667,7 @@ button {
   font-weight: 700;
   border-radius: 3px;
   padding: 8px 18px;
+  margin-left: auto;
 }
 
 /* Question Palette Side Pane */
@@ -1689,7 +1696,7 @@ button {
 
 .palette-legend-box {
   background: var(--exam-legend-bg);
-  border: 1px dashed var(--exam-legend-border);
+  border: 2px dotted var(--exam-legend-border);
   padding: 10px;
   border-radius: 4px;
   margin-bottom: 12px;
