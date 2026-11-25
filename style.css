@@ -1159,6 +1159,7 @@ button {
 
 /* Not Visited: Square grey box */
 .icon-not-visited {
+  width: 40px;
   background: var(--st-not-visited-bg);
   color: var(--st-not-visited-text);
   border: 1px solid var(--st-not-visited-border);
@@ -1167,6 +1168,7 @@ button {
 
 /* Not Answered: Red flag-like trapezoid, tapering to the right */
 .icon-not-answered {
+  width: 36px;
   background: linear-gradient(to bottom, #b83200 0%, #e54400 50%, #ff5a0a 100%);
   clip-path: polygon(0% 0%, 100% 20%, 100% 80%, 0% 100%);
   border-radius: 0;
@@ -1174,6 +1176,7 @@ button {
 
 /* Answered: Green flag-like trapezoid, matching the red shape */
 .icon-answered {
+  width: 36px;
   background: linear-gradient(to bottom, #247d00 0%, #2fbc00 50%, #3be600 100%);
   clip-path: polygon(0% 0%, 100% 20%, 100% 80%, 0% 100%);
   border-radius: 0;
@@ -1231,16 +1234,19 @@ button {
 
 /* Not Visited — square (icon has 4px corners → ring corners grow to 8px) */
 .palette-btn.is-current.ring-square::before {
+  width: 48px;
   border-radius: 8px;
 }
 
 /* Not Answered — red flag-like trapezoid */
 .palette-btn.is-current.ring-ribbon::before {
+  width: 44px;
   clip-path: polygon(0% 0%, 100% 20%, 100% 80%, 0% 100%);
 }
 
 /* Answered — matching green flag-like trapezoid */
 .palette-btn.is-current.ring-pentagon::before {
+  width: 44px;
   clip-path: polygon(0% 0%, 100% 20%, 100% 80%, 0% 100%);
 }
 
@@ -1682,7 +1688,8 @@ button {
 .palette-toggle-btn {
   position: absolute;
   left: -20px;
-  top: 10px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 20px;
   height: 40px;
   background: var(--exam-palette-toggle-bg);
